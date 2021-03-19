@@ -1,0 +1,86 @@
+#include <stdio.h>
+#include <stdbool.h>
+#include <stdlib.h>
+
+int main()
+{
+    int play = 0;
+    char difficulty;
+    printf("Einfach e oder Schwer s?:");
+    scanf("%c", &difficulty);
+    if (difficulty == 's')
+    {
+        printf("Willkommen zum schweren Spiel. Stein 1, Schere 2 oder Papier 3?:");
+        scanf("%i", &play);
+
+        switch (play)
+        {
+
+        case 1:
+            printf("Papier, du hast verloren.");
+            break;
+        case 2:
+            printf("Stein, du hast verloren.");
+            break;
+        case 3:
+            printf("Schere, du hast verloren.");
+            break;
+        }
+    }
+    if (difficulty == 'e')
+    {
+
+        printf("Willkommen zum einfachen Spiel. Stein 1, Schere 2 oder Papier 3?:");
+        scanf("%i", &play);
+        int pc_play = (rand() % (3 - 1 + 1)) + 1;
+
+        if (play == 1)
+        {
+            switch (pc_play)
+            {
+            case 1:
+                printf("Stein, unentschieden.");
+                break;
+            case 2:
+                printf("Schere, du hast gewonnen!");
+                break;
+            case 3:
+                printf("Papier, du hast verloren.");
+                break;
+            }
+        }
+        if (play == 2)
+        {
+            switch (pc_play)
+            {
+            case 1:
+                printf("Stein, du hast verloren.");
+                break;
+            case 2:
+                printf("Schere, unentschieden!");
+                break;
+            case 3:
+                printf("Papier, du hast gewonnen.");
+                break;
+            }
+        }
+        if (play == 3)
+        {
+            switch (pc_play)
+            {
+            case 1:
+                printf("Stein, du hast gewonnen!");
+                break;
+            case 2:
+                printf("Schere, du hast verloren!");
+                break;
+            case 3:
+                printf("Papier, unentschieden.");
+                break;
+            }
+        }
+    }
+    printf("\n");
+    system("pause"); 
+    return 0;
+}
